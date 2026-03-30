@@ -1,0 +1,19 @@
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    background-color: #f0f0f0;
+}
+
+.contenedor {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
