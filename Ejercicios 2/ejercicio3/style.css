@@ -1,0 +1,13 @@
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding-left: 30px;
+    background-image: url('circulo-verde-marca-verificacion-blanca-elemento-diseno-3d_84443-55684.avif');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: left center;
+    margin-bottom: 8px;
+}
