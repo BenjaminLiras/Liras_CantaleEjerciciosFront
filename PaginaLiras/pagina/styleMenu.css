@@ -1,169 +1,390 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+.menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-image: url(images/background_neon_spotlight_v5.svg);
+    background-repeat: no-repeat;
 }
 
-body {
-  background: #060606;
-  height: 100vh;
-  overflow: hidden;
+/* PORSCHE */
+
+.seccionPorsche{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+.div-Porsche{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div-Porsche .fondo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.div-Porsche .fongdo:hover{
+
+}
+.div-Porsche .fondo h1{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.3em;
+    font-size: 75px;
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgba(160, 0, 0, 0.404); /* añadirle bordes a letras*/
+}
+.div-Porsche .marca{
+    padding-left: 5%;
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left
+}
+.div-Porsche .marca a{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    color: red;
+    text-decoration: none;
+}
+.div-Porsche .modelo{
+    padding-left: 5%;
+    width: stretch;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: white;
+    position: relative;
+}
+.div-Porsche .modelo a {
+  font-size: 60px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block; /* necesario para la animacion */
 }
 
-.menu-root {
+/*Aclaracion codigo sacado de un elemento de uiverse.io */
+/* línea */
+/* .div-Porsche .modelo a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  background-color: rgba(255, 0, 0, 0.74);
+  transition: width 0.3s ease;
+}
+
+/* hover */
+/* .div-Porsche .modelo a:hover::after {
   width: 100%;
-  height: 100vh;
+}  */
+
+.div-Buton{
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* From Uiverse.io by Madflows */ 
+.button {
   position: relative;
   overflow: hidden;
-  font-family: 'Barlow Condensed', sans-serif;
-}
-
-/* SECCIONES */
-
-.section {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 5px;
+  background: #000000;
+  background-size: 400%;
+  color: #fff;
   cursor: pointer;
-  transition: filter 0.4s ease;
+  margin-bottom: 150px;
+  border: solid 2px red;
+  margin-left: 5%;
 }
 
-.s1 {
-  left: 0;
-  width: 40%;
-  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
-  background: #1a0000;
+.button:hover::before {
+  transform: scaleX(1);
 }
 
-.s2 {
-  left: 30%;
-  width: 40%;
-  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
-  background: #1a1200;
+.button-content {
+  position: relative;
+  z-index: 1;
 }
 
-.s3 {
-  left: 65%;
-  width: 40%;
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
-  background: #00001a;
-}
-
-/* GLOW */
-
-.glow {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.s1 .glow { background: radial-gradient(ellipse at 30% 85%, #5c000077 0%, transparent 65%); }
-.s2 .glow { background: radial-gradient(ellipse at 50% 85%, #5c3d0077 0%, transparent 65%); }
-.s3 .glow { background: radial-gradient(ellipse at 70% 85%, #00185c77 0%, transparent 65%); }
-
-.section:hover .glow { opacity: 1; }
-
-/* Lineas Diagonales Separacion */
-
-.divider {
-  position: absolute;
-  top: -15%;
-  width: 3px;
-  height: 130%;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.d1 {
-  left: calc(38% - 1px);
-  background: linear-gradient(180deg, #ff000022, #ff0000cc, #ff000022);
-  transform: skewX(-13deg);
-}
-
-.d2 {
-  left: calc(68% - 1px);
-  background: linear-gradient(180deg, #2255ff22, #2255ffcc, #2255ff22);
-  transform: skewX(-10deg);
-}
-
-/* CONTENIDO */
-
-.section-inner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 2.5rem 2rem 3.5rem 3rem;
-}
-
-.texto-creacion{
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.4em;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10%;
-}
-
-.marca {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.4em;
-}
-
-.porsche{
-  color: red;
-}
-
-.lamb{
-  color: rgb(255, 230, 0);
-}
-
-.ford{
-  color: rgb(0, 60, 255);
-}
-
-.nombre-auto {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 88px;
-  color: #ccc;
-}
-
-.modelo{
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px;
-  color: #333;
-}
-
-.section:hover .nombre-auto {
-  color: white;
-}
-
-/* BOTON */
-
-.boton {
-  margin-top: 1rem;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.section:hover .boton {
-  opacity: 1;
-}
-
-/* HEADER */
-
-.global-header {
+.button::before {
+  content: "";
   position: absolute;
   top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
   width: 100%;
-  text-align: center;
-  padding: 1rem;
-  font-size: 10px;
-  color: #222;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(160, 0, 0) 10.8%,
+    rgb(94, 0, 0) 94.3%
+  );
+  transition: all 0.475s;
 }
+
+/* LAMBORGHINI */
+
+.seccionLambo{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+.div-Lambo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div-Lambo .fondoLambo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.div-Lambo .fondoLambo h1{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.3em;
+    font-size: 75px;
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgba(255, 174, 0, 0.384); /* añadirle bordes a letras*/
+}
+.div-Lambo .marcaLambo{
+    padding-left: 5%;
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left
+}
+.div-Lambo .marcaLambo a{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    color: rgb(252, 193, 0);
+    text-decoration: none;
+}
+.div-Lambo .modeloLambo{
+    padding-left: 5%;
+    width: stretch;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: white;
+    position: relative;
+}
+.div-Lambo .modeloLambo a {
+  font-size: 60px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block; /* necesario para la animacion */
+}
+
+/*Aclaracion codigo sacado de un elemento de uiverse.io */
+/* línea */
+/* .div-Porsche .modelo a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  background-color: rgba(255, 0, 0, 0.74);
+  transition: width 0.3s ease;
+}
+
+/* hover */
+/* .div-Porsche .modelo a:hover::after {
+  width: 100%;
+}  */
+
+.div-ButonLambo{
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* From Uiverse.io by Madflows */ 
+.buttonLambo {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 5px;
+  background: #000000;
+  background-size: 400%;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 150px;
+  border: solid 2px rgb(252, 193, 0);
+  margin-left: 5%;
+}
+
+.buttonLambo:hover::before {
+  transform: scaleX(1);
+}
+
+.button-contentLambo {
+  position: relative;
+  z-index: 1;
+}
+
+.buttonLambo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(255, 196, 0) 10.8%,
+    rgba(167, 128, 0, 0.726) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+/* Ford */
+
+.seccionFord{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+.div-Ford{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.div-Ford .fondoFord {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.div-Ford .fondoFord h1{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.3em;
+    font-size: 75px;
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgba(0, 119, 255, 0.384); /* añadirle bordes a letras*/
+}
+.div-Ford .marcaFord{
+    padding-left: 5%;
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left
+}
+.div-Ford .marcaFord a{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.4em;
+    color: rgb(0, 67, 252);
+    text-decoration: none;
+}
+.div-Ford .modeloFord{
+    padding-left: 5%;
+    width: stretch;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: white;
+    position: relative;
+}
+.div-Ford .modeloFord a {
+  font-size: 60px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block; /* necesario para la animacion */
+}
+
+/*Aclaracion codigo sacado de un elemento de uiverse.io */
+/* línea */
+/* .div-Porsche .modelo a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  background-color: rgba(255, 0, 0, 0.74);
+  transition: width 0.3s ease;
+}
+
+/* hover */
+/* .div-Porsche .modelo a:hover::after {
+  width: 100%;
+}  */
+
+.div-ButonFord{
+    width: stretch;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* From Uiverse.io by Madflows */ 
+.buttonFord {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 5px;
+  background: #000000;
+  background-size: 400%;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 150px;
+  border: solid 2px rgb(0, 109, 252);
+  margin-left: 5%;
+}
+
+.buttonFord:hover::before {
+  transform: scaleX(1);
+}
+
+.button-contentFord {
+  position: relative;
+  z-index: 1;
+}
+
+.buttonFord::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgb(0, 68, 255) 10.8%,
+    rgba(0, 31, 167, 0.507) 94.3%
+  );
+  transition: all 0.475s;
+}
+
