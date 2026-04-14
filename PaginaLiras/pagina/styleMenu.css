@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #060606;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu-root {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* SECCIONES */
+
+.section {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.4s ease;
+}
+
+.s1 {
+  left: 0;
+  width: 40%;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+  background: #1a0000;
+}
+
+.s2 {
+  left: 30%;
+  width: 40%;
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+  background: #1a1200;
+}
+
+.s3 {
+  left: 65%;
+  width: 40%;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  background: #00001a;
+}
+
+/* GLOW */
+
+.glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.s1 .glow { background: radial-gradient(ellipse at 30% 85%, #5c000077 0%, transparent 65%); }
+.s2 .glow { background: radial-gradient(ellipse at 50% 85%, #5c3d0077 0%, transparent 65%); }
+.s3 .glow { background: radial-gradient(ellipse at 70% 85%, #00185c77 0%, transparent 65%); }
+
+.section:hover .glow { opacity: 1; }
+
+/* Lineas Diagonales Separacion */
+
+.divider {
+  position: absolute;
+  top: -15%;
+  width: 3px;
+  height: 130%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.d1 {
+  left: calc(38% - 1px);
+  background: linear-gradient(180deg, #ff000022, #ff0000cc, #ff000022);
+  transform: skewX(-13deg);
+}
+
+.d2 {
+  left: calc(68% - 1px);
+  background: linear-gradient(180deg, #2255ff22, #2255ffcc, #2255ff22);
+  transform: skewX(-10deg);
+}
+
+/* CONTENIDO */
+
+.section-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem 2rem 3.5rem 3rem;
+}
+
+.texto-creacion{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+.marca {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+}
+
+.porsche{
+  color: red;
+}
+
+.lamb{
+  color: rgb(255, 230, 0);
+}
+
+.ford{
+  color: rgb(0, 60, 255);
+}
+
+.nombre-auto {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px;
+  color: #ccc;
+}
+
+.modelo{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: #333;
+}
+
+.section:hover .nombre-auto {
+  color: white;
+}
+
+/* BOTON */
+
+.boton {
+  margin-top: 1rem;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.section:hover .boton {
+  opacity: 1;
+}
+
+/* HEADER */
+
+.global-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 10px;
+  color: #222;
+}
