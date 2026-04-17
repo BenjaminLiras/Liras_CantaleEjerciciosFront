@@ -1,0 +1,391 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.342);
+    position: fixed;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.header-logo h3{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+.header-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header-links a {
+    font-family: 'Bebas Neue', sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 3%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    background-image: url(images/fordMobile.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor .detalle{
+    margin-top: 20%;
+    background-color: rgba(2, 196, 255, 0.788);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.89);
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.contenedor .marca{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgba(2, 196, 255, 0.788);
+    border-radius: 2px;
+    padding: 2px;
+}
+.contenedor .modelo1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: white;
+}
+.contenedor .modelo2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgba(2, 196, 255, 0.788);
+}
+
+.contenedor .descripcion {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 20px;
+    max-width: 400px;
+}
+.contenedor-grid{
+    background-color: black;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(2, 196, 255, 0.438);
+    border: 1px solid rgba(2, 196, 255, 0.788);
+}
+
+.item {
+    background: rgba(0, 0, 0, 0.808) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
+
+.item h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+.item h5{
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 252, 252, 0.493);
+}
+
+.contenedor-nur{
+    background-color: black;
+    padding-top: 50px;
+}
+.nurburgring{
+    display: flex;
+    background-image: linear-gradient( 
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+    ), url(images/ford.png);
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    padding: 20px;
+}
+
+.nurburgring .titulo{
+    border: 1px solid rgba(2, 196, 255, 0.788);
+    border-radius: 3px;
+    padding: 2px;
+}
+.nurburgring .titulo h4{
+    background-color: rgb(0, 0, 0);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.89);
+    padding: 2px;
+    color: rgba(2, 196, 255, 0.788);
+}
+.nurburgring .tiempo h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.nurburgring .lema h5{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 30px;
+    color: white;
+}
+
+.nurburgring .descripcion-nurburgring{
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    margin-top: 20px;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    padding-bottom: 30px;
+}
+
+/* From Uiverse.io by ernestnash */ 
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid rgba(2, 196, 255, 0.788);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 196, 255, 0.788);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+/* TABLETA*/
+@media (min-width: 768px) {
+
+    .header-logo h3 {
+        font-size: 30px;
+    }
+
+    .header-links {
+        gap: 30px;
+    }
+
+    .header-links a {
+        font-size: 16px;
+    }
+
+    .contenedor {
+        padding-left: 6%;
+        padding-top: 14%;
+        padding-bottom: 14%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .contenedor .detalle {
+        font-size: 12px;
+    }
+
+    .contenedor .marca {
+        font-size: 12px;
+    }
+
+    .contenedor .modelo1 {
+        font-size: 72px;
+    }
+
+    .contenedor .modelo2 {
+        font-size: 72px;
+    }
+
+    .contenedor .descripcion {
+        font-size: 13px;
+        max-width: 500px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item {
+        padding: 20px 10px;
+    }
+
+    .item h1 {
+        font-size: 32px;
+    }
+
+    .item h5 {
+        font-size: 11px;
+    }
+
+    .contenedor-nur {
+        padding-top: 70px;
+    }
+
+    .nurburgring {
+        padding: 40px;
+    }
+
+    .nurburgring .titulo h4 {
+        font-size: 12px;
+    }
+
+    .nurburgring .tiempo h1 {
+        font-size: 80px;
+    }
+
+    .nurburgring .lema h5 {
+        font-size: 42px;
+    }
+
+    .nurburgring .descripcion-nurburgring {
+        font-size: 13px;
+        max-width: 560px;
+    }
+}
+
+/* PC */
+@media (min-width: 1200px) {
+
+    .header-logo h3 {
+        font-size: 36px;
+    }
+
+    .header-links {
+        gap: 40px;
+    }
+
+    .header-links a {
+        font-size: 18px;
+    }
+
+    .contenedor {
+        padding-left: 8%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        background-image: url(images/fordPC.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .contenedor .detalle {
+        margin-top: 0;
+    }
+
+    .contenedor .detalle {
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    .contenedor .marca {
+        font-size: 14px;
+        padding: 4px;
+    }
+
+
+    .contenedor .descripcion {
+        font-size: 15px;
+        max-width: 640px;
+        margin-top: 30px;
+    }
+
+    .item {
+        padding: 30px 20px;
+    }
+
+    .item h1 {
+        font-size: 48px;
+    }
+
+    .item h5 {
+        font-size: 13px;
+    }
+
+    .contenedor-nur {
+        padding-top: 100px;
+    }
+
+    .nurburgring {
+        padding: 80px 60px;
+        background-image: linear-gradient( 
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+        ), url(images/ford-autoPC.png);
+    }
+
+    .nurburgring .titulo h4 {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    .nurburgring .tiempo h1 {
+        font-size: 120px;
+    }
+
+    .nurburgring .lema h5 {
+        font-size: 60px;
+    }
+
+    .nurburgring .descripcion-nurburgring {
+        font-size: 15px;
+        max-width: 700px;
+        padding-bottom: 50px;
+    }
+
+    .btn {
+        font-size: 24px;
+        padding: 1rem 2.2rem;
+    }
+}

@@ -1,4 +1,8 @@
 
+*{
+    margin: 0;
+    padding: 0;
+}
 .menu{
     position: absolute;
     width: 100%;
@@ -6,6 +10,8 @@
     display: flex;
     background-image: url(images/background_neon_spotlight_v5.svg);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* PORSCHE */
@@ -28,15 +34,14 @@
     text-align: center;
 
 }
-.div-Porsche .fongdo:hover{
 
-}
 .div-Porsche .fondo h1{
     font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.3em; 
     font-size: 75px;
+    padding-bottom: 40%;
     color: transparent;
-    -webkit-text-stroke: 0.5px rgba(160, 0, 0, 0.404); /* añadirle bordes a letras*/
+    -webkit-text-stroke: 0.5px rgb(107 6 6);
 }
 .div-Porsche .marca{
     padding-left: 5%;
@@ -154,13 +159,13 @@
     display: flex;
     justify-content: center;
     text-align: center;
-
 }
 
 .div-Lambo .fondoLambo h1{
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0.3em;
     font-size: 75px;
+    padding-bottom: 40%;
     color: transparent;
     -webkit-text-stroke: 0.5px rgba(255, 174, 0, 0.384); /* añadirle bordes a letras*/
 }
@@ -280,13 +285,13 @@
     display: flex;
     justify-content: center;
     text-align: center;
-
 }
 
 .div-Ford .fondoFord h1{
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0.3em;
     font-size: 75px;
+    padding-bottom: 70%; /*Consultar profe porque en el caso de ford las letras se mantenian mas abajo, es decir, el padding era el mismo porcentaje pero menor tamaña */
     color: transparent;
     -webkit-text-stroke: 0.5px rgba(0, 119, 255, 0.384); /* añadirle bordes a letras*/
 }
@@ -314,11 +319,11 @@
     position: relative;
 }
 .div-Ford .modeloFord a {
-  font-size: 60px;
-  text-decoration: none;
-  color: white;
-  position: relative;
-  display: inline-block; /* necesario para la animacion */
+    font-size: 60px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+     /* display: inline-block; /* necesario para la animacion */
 }
 
 /*Aclaracion codigo sacado de un elemento de uiverse.io */
@@ -388,3 +393,144 @@
   transition: all 0.475s;
 }
 
+
+/* Responsive */
+/* En la mayoria de resoluciones de laptop se ve mal. Intentar corregir att:LirasGOD y su supremacia */
+@media (max-width: 1300px) {
+
+  /* PORSCHE */
+  .seccionPorsche {
+    margin-top: 10%;
+  }
+
+  .div-Porsche .fondo h1 {
+    font-size: 55px;
+    padding-bottom: 20%;
+  }
+
+  .div-Porsche .modelo a {
+    font-size: 45px;
+  }
+
+
+  /* LAMBOX */
+  .seccionLambo {
+    margin-top: 10%;
+  }
+
+  .div-Lambo .fondoLambo h1 {
+    font-size: 55px;
+    padding-bottom: 20%;
+  }
+
+  .div-Lambo .modeloLambo a {
+    font-size: 45px;
+  }
+
+
+  /* FORD */
+  .seccionFord {
+    margin-top: 10%;
+  }
+
+  .div-Ford .fondoFord h1 {
+    font-size: 55px;
+    padding-bottom: 20%;
+  }
+ /* Arruina la version mobile */
+  /* .div-Ford .marcaFord {
+    padding-left: 25%;
+  }
+  .div-Ford .modeloFord{
+    padding-left: 25%;
+  }
+  .div-Ford .buttonFord{
+    margin-left: 25%;
+  } */
+  .div-Ford .modeloFord a {
+    font-size: 45px;
+  }
+
+}
+@media (max-width: 900px) {
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .menu {
+    flex-direction: column;
+    height: auto;
+    background-image: url(images/fondoMobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .seccionPorsche,
+  .seccionLambo,
+  .seccionFord {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(images/fondoMobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* PORSCHE*/
+.seccionPorsche {
+  width: 100%;
+  margin-top: 15%;
+}
+
+.div-Porsche .fondo h1 {
+  font-size: 40px;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0); /* añadirle bordes a letras*/
+}
+
+.div-Porsche .modelo a {
+  font-size: 35px;
+}
+
+/* LAMBOX */
+.seccionLambo {
+  width: 100%;
+  margin-top: 15%;
+}
+
+.div-Lambo .fondoLambo h1 {
+  font-size: 40px;
+}
+
+.div-Lambo .modeloLambo a {
+  font-size: 35px;
+}
+
+/* FORD */
+.seccionFord {
+  width: 100%;
+  margin-top: 15%;
+}
+.div-Ford .fondoFord h1 {
+  font-size: 40px;
+}
+
+.div-Ford .modeloFord a {
+  font-size: 35px;
+}
+
+}
