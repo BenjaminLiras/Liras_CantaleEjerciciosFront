@@ -1,0 +1,815 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.342);
+    position: fixed;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.header-logo h3{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+.header-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header-links a {
+    font-family: 'Bebas Neue', sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 3%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    background-image: linear-gradient( 
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.9)
+    ), url(images/fondoMobile.png);
+    background-position: center;
+}
+
+.contenedor .detalle{
+    margin-top: 10%;
+    background-color:  rgba(255, 255, 255, 0.199);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.89);
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.contenedor .marca{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgb(109, 109, 109);
+    border-radius: 2px;
+    padding: 2px;
+}
+.contenedor .modelo1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: white;
+}
+.contenedor .modelo2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.199);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.contenedor .descripcion {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.contenedor-info{
+    background-color: black;
+}
+.contenedor-titulos{
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.subtitulo{
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 252, 252, 0.493);
+    padding-left: 5%;
+}
+.titulo-info{
+    font-family:'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    color: white;
+    padding-left: 5%;
+}
+.titulo-info h1{
+    font-size: 40px;
+}
+    
+.contenedor-grid2{
+    background-color: black;
+    width: 90%;
+    padding: 0 5%;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1px;
+}
+
+
+/* Porsche */
+.carta-porsche {
+    background: rgba(97, 0, 0, 0.356);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    padding: 5%;
+    position: relative;
+}
+
+.carta-porsche::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: rgba(255, 2, 2, 0.788);
+    transition: width 0.4s ease;
+}
+/* Alternativa para un hover en mobile */
+.carta-porsche:active::after { 
+    width: 100%;
+}
+
+.carta-porsche:hover {
+    background: rgba(97, 0, 0, 0.356);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    padding: 5%;
+}
+
+.carta-porsche:hover::after {
+    width: 100%;
+}
+.carta-porsche .modelo{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 40px;
+    color: transparent;
+    -webkit-text-stroke: 0.1px rgba(78, 1, 1, 0.781);
+}
+.carta-porsche .marca{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgb(255, 0, 0);
+    border-radius: 2px;
+    padding: 2px;
+}
+.carta-porsche h1{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 30px;
+    color: white;
+}
+.carta-porsche p{
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 10px;
+}
+
+/* Lamborghini */
+.carta-lambo {
+    margin-top: 2%;
+    background: rgba(173, 142, 0, 0.137);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    padding: 5%;
+    position: relative;
+}
+
+.carta-lambo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: rgba(255, 217, 0, 0.788);
+    transition: width 0.4s ease;
+}
+/* Alternativa para un hover en mobile */
+.carta-lambo:active::after { 
+    width: 100%;
+}
+
+.carta-lambo:hover {
+    background: rgba(173, 142, 0, 0.137);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    padding: 5%;
+}
+
+.carta-lambo:hover::after {
+    width: 100%;
+}
+.carta-lambo .modelo{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 40px;
+    color: transparent;
+    -webkit-text-stroke: 0.1px rgba(134, 103, 0, 0.781);
+}
+.carta-lambo .marca{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgb(255, 217, 0);
+    border-radius: 2px;
+    padding: 2px;
+}
+.carta-lambo h1{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 30px;
+    color: white;
+}
+.carta-lambo p{
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 10px;
+}
+
+/* Ford */
+.carta-ford {
+    margin-top: 2%;
+    background: rgba(0, 0, 97, 0.226);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    padding: 5%;
+    position: relative;
+}
+
+.carta-ford::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: rgba(0, 0, 255, 0.788);
+    transition: width 0.4s ease;
+}
+/* Alternativa para un hover en mobile */
+.carta-ford:active::after { 
+    width: 100%;
+}
+
+.carta-ford:hover {
+    background: rgba(0, 0, 97, 0.226);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+    align-items: flex-start;
+    padding: 5%;
+}
+
+.carta-ford:hover::after {
+    width: 100%;
+}
+.carta-ford .modelo{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 40px;
+    color: transparent;
+    -webkit-text-stroke: 0.1px rgba(0, 0, 97, 0.781);
+}
+.carta-ford .marca{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgb(0, 0, 255);
+    border-radius: 2px;
+    padding: 2px;
+}
+.carta-ford h1{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 30px;
+    color: white;
+}
+.carta-ford p{
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 10px;
+}
+
+
+.contenedor-proyecto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 3%;
+    padding-top: 20%;
+    padding-bottom: 20%;    
+    background-color: black;
+}
+
+.contenedor-proyecto .marca-proyecto{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgb(109, 109, 109);
+    border-radius: 2px;
+    padding: 2px;
+}
+.contenedor-proyecto .modelo1-proyecto{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+.contenedor-proyecto .modelo2-proyecto {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.contenedor-proyecto .descripcion-proyecto {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 20px;
+}
+
+.contenedor-porque{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 3%;
+    padding-top: 5%;
+    padding-bottom: 20%;
+}
+.contenedor-porque .marca-porque{
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+    color: rgb(109, 109, 109);
+    border-radius: 2px;
+    padding: 2px;
+}
+.contenedor-porque .modelo1-porque{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+.contenedor-porque .modelo2-porque {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.contenedor-porque .porque{
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contenedor-porque .porque .numero-01{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgb(255, 0, 0);
+    margin-right: 20px;
+    background-color: rgba(97, 0, 0, 0.329);
+    border-radius: 5px;
+    padding: 2%;
+}
+.contenedor-porque .porque .numero-02{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgb(255, 217, 0);
+    margin-right: 20px;
+    background-color: rgba(97, 82, 0, 0.329);
+    border-radius: 5px;
+    padding: 2%;
+}
+.contenedor-porque .porque .numero-03{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgb(0, 0, 255);
+    margin-right: 20px;
+    background-color: rgba(0, 0, 97, 0.329);
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.porque-columna{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.porque-columna h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.contenedor-porque .porque p{
+    color: rgba(255, 252, 252, 0.493);
+    margin-right: 20px;
+}
+
+.contenedor-fin{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.contenedor-fin .modelo1-fin{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+.contenedor-fin .modelo2-fin{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+.contenedor-fin .descripcion-fin{
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 252, 252, 0.493);
+    margin-top: 20px;
+}   
+
+.div-Buton{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5%;
+    width: 100%;
+}
+
+/* From Uiverse.io by Madflows */ 
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 5px;
+    background: #000000;
+    background-size: 400%;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 150px;
+    border: solid 2px rgb(255, 255, 255);
+    margin-left: 5%;
+}
+
+.button:hover::before {
+    transform: scaleX(1);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+    82.3deg,
+    rgb(80, 80, 80) 10.8%,
+    rgb(66, 66, 66) 94.3%
+    );
+    transition: all 0.475s;
+}
+
+/* ── TABLET ── */
+@media (min-width: 768px) {
+ 
+    .header-logo h3 {
+        font-size: 26px;
+    }
+    .header-links {
+        gap: 25px;
+    }
+    .header-links a {
+        font-size: 14px;
+    }
+    .contenedor {
+        padding-left: 6%;
+        padding-top: 14%;
+        padding-bottom: 14%;
+    }
+    .contenedor .detalle {
+        font-size: 11px;
+    }
+    .contenedor .marca {
+        font-size: 11px;
+    }
+    .contenedor .modelo1 {
+        font-size: 52px;
+    }
+    .contenedor .modelo2 {
+        font-size: 52px;
+    }
+    .contenedor .descripcion {
+        font-size: 12px;
+        max-width: 480px;
+    }
+    .contenedor-titulos {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .subtitulo {
+        font-size: 11px;
+    }
+    .titulo-info h1 {
+        font-size: 44px;
+    }
+    .grid2 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+    }
+    .carta-lambo {
+        margin-top: 0;
+    }
+    .carta-ford {
+        margin-top: 0;
+    }
+    .carta-porsche h1 {
+        font-size: 18px;
+    }
+    .carta-lambo h1 {
+        font-size: 18px;
+    }
+    .carta-ford h1 {
+        font-size: 18px;
+    }
+    .carta-porsche p {
+        font-size: 12px;
+    }
+    .carta-lambo p {
+        font-size: 12px;
+    }
+    .carta-ford p {
+        font-size: 12px;
+    }
+    .contenedor-proyecto {
+        padding-left: 6%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .contenedor-proyecto .modelo1-proyecto {
+        font-size: 38px;
+    }
+    .contenedor-proyecto .modelo2-proyecto {
+        font-size: 38px;
+    }
+    .contenedor-proyecto .descripcion-proyecto {
+        font-size: 12px;
+        max-width: 520px;
+    }
+    .contenedor-porque {
+        padding-left: 6%;
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }
+    .contenedor-porque .modelo1-porque {
+        font-size: 38px;
+    }
+    .contenedor-porque .modelo2-porque {
+        font-size: 38px;
+    }
+    .porque-columna h1 {
+        font-size: 18px;
+    }
+    .contenedor-porque .porque p {
+        font-size: 12px;
+    }
+    .contenedor-porque .porque .numero-01 {
+        font-size: 32px;
+    }
+    .contenedor-porque .porque .numero-02 {
+        font-size: 32px;
+    }
+    .contenedor-porque .porque .numero-03 {
+        font-size: 32px;
+    }
+
+    /* Fin */
+    .contenedor-fin .modelo1-fin {
+        font-size: 38px;
+    }
+    .contenedor-fin .modelo2-fin {
+        font-size: 38px;
+    }
+    .contenedor-fin .descripcion-fin {
+        font-size: 12px;
+        max-width: 480px;
+    }
+}
+
+/* ── PC ── */
+@media (min-width: 1200px) {
+
+    .header-logo h3 {
+        font-size: 28px;
+    }
+    .header-links {
+        gap: 35px;
+    }
+    .header-links a {
+        font-size: 15px;
+    }
+    .contenedor {
+        padding-left: 8%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        background-image: linear-gradient( 
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+        ), url(images/background_neon_spotlight_v5.svg);
+        background-position: center;
+        background-size: cover;
+        background-color: black;
+    }
+    .contenedor .detalle {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .contenedor .marca {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .contenedor .modelo1 {
+        font-size: 72px;
+    }
+    .contenedor .modelo2 {
+        font-size: 72px;
+    }
+    .contenedor .descripcion {
+        font-size: 13px;
+        max-width: 580px;
+        margin-top: 24px;
+    }
+
+    .contenedor-titulos {
+        padding-top: 40px;
+        padding-bottom: 32px;
+    }
+    .subtitulo {
+        font-size: 12px;
+        padding-left: 8%;
+    }
+    .titulo-info {
+        padding-left: 8%;
+    }
+    .titulo-info h1 {
+        font-size: 58px;
+    }
+
+    .contenedor-grid2 {
+        width: 84%;
+        padding: 0 8%;
+    }
+    .carta-porsche h1 {
+        font-size: 20px;
+    }
+    .carta-lambo h1 {
+        font-size: 20px;
+    }
+    .carta-ford h1 {
+        font-size: 20px;
+    }
+    .carta-porsche .modelo {
+        font-size: 38px;
+    }
+    .carta-lambo .modelo {
+        font-size: 38px;
+    }
+    .carta-ford .modelo {
+        font-size: 38px;
+    }
+    .carta-porsche p {
+        font-size: 13px;
+    }
+    .carta-lambo p {
+        font-size: 13px;
+    }
+    .carta-ford p {
+        font-size: 13px;
+    }
+    .contenedor-proyecto {
+        padding-left: 8%;
+        padding-top: 8%;
+        padding-bottom: 8%;
+    }
+    .contenedor-proyecto .marca-proyecto {
+        font-size: 12px;
+    }
+    .contenedor-proyecto .modelo1-proyecto {
+        font-size: 52px;
+    }
+    .contenedor-proyecto .modelo2-proyecto {
+        font-size: 52px;
+    }
+    .contenedor-proyecto .descripcion-proyecto {
+        font-size: 13px;
+        max-width: 640px;
+    }
+    .contenedor-porque {
+        padding-left: 8%;
+        padding-top: 5%;
+        padding-bottom: 8%;
+        max-width: 1000px;
+    }
+    .contenedor-porque .marca-porque {
+        font-size: 12px;
+    }
+    .contenedor-porque .modelo1-porque {
+        font-size: 52px;
+    }
+    .contenedor-porque .modelo2-porque {
+        font-size: 52px;
+    }
+    .porque-columna h1 {
+        font-size: 30px;
+    }
+    .contenedor-porque .porque p {
+        font-size: 13px;
+    }
+    .contenedor-porque .porque .numero-01 {
+        font-size: 40px;
+        padding: 1% 2%;
+    }
+    .contenedor-porque .porque .numero-02 {
+        font-size: 40px;
+        padding: 1% 2%;
+    }
+    .contenedor-porque .porque .numero-03 {
+        font-size: 40px;
+        padding: 1% 2%;
+    }
+    .contenedor-fin {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .contenedor-fin .modelo1-fin {
+        font-size: 52px;
+    }
+    .contenedor-fin .modelo2-fin {
+        font-size: 52px;
+    }
+    .contenedor-fin .descripcion-fin {
+        font-size: 13px;
+        max-width: 560px;
+    }
+    .button {
+        font-size: 16px;
+        height: 3.2rem;
+        padding: 0 2.2rem;
+    }
+}

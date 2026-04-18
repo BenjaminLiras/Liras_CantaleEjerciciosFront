@@ -323,26 +323,8 @@
     text-decoration: none;
     color: white;
     position: relative;
-     /* display: inline-block; /* necesario para la animacion */
 }
 
-/*Aclaracion codigo sacado de un elemento de uiverse.io */
-/* línea */
-/* .div-Porsche .modelo a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 0;
-  height: 3px;
-  background-color: rgba(255, 0, 0, 0.74);
-  transition: width 0.3s ease;
-}
-
-/* hover */
-/* .div-Porsche .modelo a:hover::after {
-  width: 100%;
-}  */
 
 .div-ButonFord{
     width: stretch;
@@ -465,12 +447,20 @@
     background-position: center;
   }
 
-  .seccionPorsche,
-  .seccionLambo,
-  .seccionFord {
-    width: 100%;
-    margin-top: 10%;
-  }
+  .seccionPorsche {
+  width: 100%;
+  margin-top: 10%;
+}
+
+.seccionLambo {
+  width: 100%;
+  margin-top: 10%;
+}
+
+.seccionFord {
+  width: 100%;
+  margin-top: 10%;
+}
 
   h1 {
     font-size: 50px;
@@ -499,7 +489,7 @@
 
 .div-Porsche .fondo h1 {
   font-size: 40px;
-  -webkit-text-stroke: 0.5px rgb(0, 0, 0); /* añadirle bordes a letras*/
+  -webkit-text-stroke: 0.5px rgba(66, 0, 0, 0.616); /* añadirle bordes a letras*/
 }
 
 .div-Porsche .modelo a {
