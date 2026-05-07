@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Tarjeta de Usuario</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8e8e8;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .tarjeta {
+            width: 350px;
+            background-color: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Banner superior */
+        .banner {
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            position: relative;
+        }
+
+        /* Contenedor de la foto de perfil */
+        .foto-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .foto-perfil {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Datos del perfil */
+        .datos {
+            text-align: center;
+            padding: 15px 20px 25px;
+        }
+
+        .datos h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .datos .ciudad {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        /* Estadísticas */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid #eee;
+            padding-top: 18px;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat .numero {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .stat .label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <div class="banner"></div>
+        <div class="foto-container">
+            <img src="https://i.pravatar.cc/200?img=12" alt="Foto de perfil" class="foto-perfil">
+        </div>
+        <div class="datos">
+            <h2>Santiago Ortiz</h2>
+            <p class="ciudad">📍 Córdoba, Argentina</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="numero">1.2K</span>
+                    <span class="label">Seguidores</span>
+                </div>
+                <div class="stat">
+                    <span class="numero">3.4K</span>
+                    <span class="label">Likes</span>
+                </div>
+                <div class="stat">
+                    <span class="numero">86</span>
+                    <span class="label">Fotos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

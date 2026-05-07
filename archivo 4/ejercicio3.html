@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Perfil de Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        /* ========== HEADER / NAV ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #fff;
+            border-bottom: 1px solid #dbdbdb;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: 'Segoe UI', cursive;
+        }
+
+        .navbar .icons {
+            display: flex;
+            gap: 18px;
+            font-size: 20px;
+        }
+
+        .navbar .icons span {
+            cursor: pointer;
+        }
+
+        /* ========== PERFIL HEADER ========== */
+        .perfil-header {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: #fff;
+        }
+
+        .perfil-foto {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid transparent;
+            background: linear-gradient(#fff, #fff) padding-box,
+                        linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) border-box;
+            flex-shrink: 0;
+        }
+
+        .perfil-info {
+            flex: 1;
+        }
+
+        .perfil-info .username-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .perfil-info .username-row h2 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .perfil-info .username-row .verificado {
+            color: #3897f0;
+            font-size: 16px;
+        }
+
+        .btn-seguir {
+            background-color: #0095f6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-seguir:hover {
+            background-color: #1877f2;
+        }
+
+        .btn-mensaje {
+            background-color: #efefef;
+            color: #262626;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Stats en mobile van abajo */
+        .perfil-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #dbdbdb;
+            border-bottom: 1px solid #dbdbdb;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .perfil-stats .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .perfil-stats .stat .numero {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .perfil-stats .stat .label {
+            font-size: 13px;
+            color: #8e8e8e;
+        }
+
+        /* Bio */
+        .perfil-bio {
+            padding: 12px 16px;
+            background-color: #fff;
+        }
+
+        .perfil-bio .nombre-completo {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .perfil-bio .bio-texto {
+            font-size: 14px;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .perfil-bio .bio-link {
+            color: #00376b;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        /* ========== STORIES HIGHLIGHTS ========== */
+        .highlights {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            overflow-x: auto;
+            background-color: #fff;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .highlight-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .highlight-item .highlight-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid #dbdbdb;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fafafa;
+        }
+
+        .highlight-item .highlight-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .highlight-item span {
+            font-size: 12px;
+            max-width: 64px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* ========== TABS DE PUBLICACIONES ========== */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 22px;
+            color: #8e8e8e;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab.activo {
+            color: #262626;
+            border-bottom: 2px solid #262626;
+        }
+
+        /* ========== GRID DE PUBLICACIONES ========== */
+        .grid-publicaciones {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+        }
+
+        .grid-publicaciones .publicacion {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .grid-publicaciones .publicacion img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.2s;
+        }
+
+        .grid-publicaciones .publicacion:hover img {
+            opacity: 0.7;
+        }
+
+        /* ========== FOOTER NAV (Mobile) ========== */
+        .footer-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            border-top: 1px solid #dbdbdb;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 100;
+        }
+
+        .footer-nav span {
+            font-size: 22px;
+            cursor: pointer;
+            color: #262626;
+        }
+
+        .footer-nav .perfil-mini {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #262626;
+        }
+
+        /* Espacio para el footer fijo */
+        .spacer-bottom {
+            height: 60px;
+        }
+
+        /* ====================================== */
+        /* ========== RESPONSIVE DESKTOP ========== */
+        /* ====================================== */
+        @media (min-width: 768px) {
+            .navbar {
+                justify-content: center;
+                gap: 20px;
+                padding: 10px 20px;
+                max-width: 935px;
+                margin: 0 auto;
+                border-bottom: 1px solid #dbdbdb;
+            }
+
+            .perfil-header {
+                max-width: 935px;
+                margin: 30px auto 0;
+                padding: 20px 40px;
+                gap: 40px;
+            }
+
+            .perfil-foto {
+                width: 150px;
+                height: 150px;
+            }
+
+            .perfil-info .username-row h2 {
+                font-size: 22px;
+            }
+
+            /* En desktop, stats van dentro del perfil-info */
+            .perfil-stats-desktop {
+                display: flex;
+                gap: 30px;
+                margin-top: 14px;
+            }
+
+            .perfil-stats-desktop .stat {
+                font-size: 15px;
+            }
+
+            .perfil-stats-desktop .stat .numero {
+                font-weight: 700;
+            }
+
+            /* Ocultar stats mobile en desktop */
+            .perfil-stats {
+                display: none;
+            }
+
+            .perfil-bio {
+                max-width: 935px;
+                margin: 0 auto;
+                padding: 0 40px 20px;
+                padding-left: 230px;
+                margin-top: -10px;
+            }
+
+            .highlights {
+                max-width: 935px;
+                margin: 0 auto;
+                padding: 16px 40px 16px 230px;
+            }
+
+            .tabs {
+                max-width: 935px;
+                margin: 0 auto;
+                justify-content: center;
+                gap: 60px;
+            }
+
+            .tab {
+                flex: none;
+                padding: 14px 0;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .grid-publicaciones {
+                max-width: 935px;
+                margin: 0 auto;
+                gap: 28px;
+                padding: 10px 0;
+            }
+
+            /* Ocultar footer nav en desktop */
+            .footer-nav {
+                display: none;
+            }
+
+            .spacer-bottom {
+                height: 0;
+            }
+        }
+
+        /* Ocultar stats desktop en mobile */
+        .perfil-stats-desktop {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .perfil-stats-desktop {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <span class="logo">Instagram</span>
+        <div class="icons">
+            <span>➕</span>
+            <span>❤️</span>
+            <span>💬</span>
+        </div>
+    </nav>
+
+    <!-- PERFIL HEADER -->
+    <div class="perfil-header">
+        <img src="imagenes/bobpfp.jpg" alt="Foto de perfil" class="perfil-foto">
+        <div class="perfil-info">
+            <div class="username-row">
+                <h2>bob.esponja.oficial</h2>
+                <span class="verificado">✔️</span>
+                <button class="btn-seguir">Seguir</button>
+                <button class="btn-mensaje">Mensaje</button>
+            </div>
+            <!-- Stats solo visibles en desktop -->
+            <div class="perfil-stats-desktop">
+                <div class="stat"><span class="numero">12</span> publicaciones</div>
+                <div class="stat"><span class="numero">6M</span> seguidores</div>
+                <div class="stat"><span class="numero">1025</span> seguidos</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS MOBILE -->
+    <div class="perfil-stats">
+        <div class="stat">
+            <span class="numero">12</span>
+            <span class="label">publicaciones</span>
+        </div>
+        <div class="stat">
+            <span class="numero">6M</span>
+            <span class="label">seguidores</span>
+        </div>
+        <div class="stat">
+            <span class="numero">1025</span>
+            <span class="label">seguidos</span>
+        </div>
+    </div>
+
+    <!-- BIO -->
+    <div class="perfil-bio">
+        <p class="nombre-completo">Bob Esponja Pantalones Cuadrados</p>
+        <p class="bio-texto">🍔 Chef del Crustáceo Cascarudo | 🪸 Bikini Bottom<br>🐌 Dueño de Gary | Mejor amigo de Patricio Estrella</p>
+        <a href="#" class="bio-link">linktr.ee/bob.esponja</a>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <div class="highlights">
+        <div class="highlight-item">
+            <div class="highlight-circle">
+                <img src="imagenes/cangreburger.jpg" alt="Highlight 1">
+            </div>
+            <span>Cangreburger</span>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-circle">
+                <img src="imagenes/bobypatricio.jpg" alt="Highlight 2">
+            </div>
+            <span>Patricio</span>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-circle">
+                <img src="imagenes/gary.jpg" alt="Highlight 3">
+            </div>
+            <span>Gary</span>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-circle">
+                <img src="imagenes/medusas.jpg" alt="Highlight 4">
+            </div>
+            <span>Medusas</span>
+        </div>
+        <div class="highlight-item">
+            <div class="highlight-circle">
+                <img src="imagenes/karate.jpg" alt="Highlight 5">
+            </div>
+            <span>Karate</span>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <div class="tab activo">🔲</div>
+        <div class="tab">🎬</div>
+        <div class="tab">🏷️</div>
+    </div>
+
+    <!-- GRID DE PUBLICACIONES -->
+    <div class="grid-publicaciones">
+        <div class="publicacion">
+            <img src="imagenes/cocinando.jpg" alt="Publicación 1">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/calamardoyyo.jpg" alt="Publicación 2">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/divertido.jpg" alt="Publicación 3">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/confundido.jpg" alt="Publicación 4">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/miedo.jpg" alt="Publicación 5">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/auto.jpg" alt="Publicación 6">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/obra.png" alt="Publicación 7">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/millonario.jpg" alt="Publicación 8">
+        </div>
+        <div class="publicacion">
+            <img src="imagenes/caos.jpg" alt="Publicación 9">
+        </div>
+    </div>
+
+    <div class="spacer-bottom"></div>
+
+    <!-- FOOTER NAV (Mobile) -->
+    <nav class="footer-nav">
+        <span>🏠</span>
+        <span>🔍</span>
+        <span>🎬</span>
+        <span>🛍️</span>
+        <img src="imagenes/bobpfp.jpg" alt="Perfil" class="perfil-mini">
+    </nav>
+
+</body>
+</html>
